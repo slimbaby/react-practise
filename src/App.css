@@ -1,11 +1,13 @@
 .App {
   text-align: center;
-  color: pink;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.active {
+  color: pink;
 }
 
 @media (prefers-reduced-motion: no-preference) {

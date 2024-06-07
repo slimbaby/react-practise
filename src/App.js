@@ -9,6 +9,7 @@ class Aaa extends Component {
       { id: 2, name: '时间', type: 'time' },
     ],
     active: 'hot',
+    count: 1,
     list: [
       {
         id: 1,
@@ -32,9 +33,20 @@ class Aaa extends Component {
         attitute: -1,
       },
     ],
+    msg: '我是输入框的内容',
   }
   timeFormate(params) {
     return moment(params).format('YYYY-MM-DD HH:mm:ss')
+  }
+  handleClick = () => {
+    this.setState({
+      count: this.state.count + 1,
+    })
+  }
+  changeMsg = (e) => {
+    this.setState({
+      msg: e.target.value,
+    })
   }
   render() {
     const { tabs, active, list } = this.state
@@ -48,6 +60,8 @@ class Aaa extends Component {
         {list.map((item) => (
           <div key={item.id}>按{this.timeFormate(item.time)}排序</div>
         ))}
+        <button onClick={this.handleClick}>{this.state.count}</button>
+        <input type="text" value={this.state.msg} onChange={this.changeMsg} />
       </div>
     )
   }

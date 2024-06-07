@@ -1,5 +1,5 @@
 import './App.css'
-import { Component } from 'react'
+import { Component, createRef } from 'react'
 import moment from 'moment/moment'
 const name = '我是大美女'
 class Aaa extends Component {
@@ -35,6 +35,7 @@ class Aaa extends Component {
     ],
     msg: '我是输入框的内容',
   }
+  inputRef = createRef()
   timeFormate(params) {
     return moment(params).format('YYYY-MM-DD HH:mm:ss')
   }
@@ -47,6 +48,9 @@ class Aaa extends Component {
     this.setState({
       msg: e.target.value,
     })
+  }
+  hanleRefClick = () => {
+    console.log(this.inputRef.current.value)
   }
   render() {
     const { tabs, active, list } = this.state
@@ -62,6 +66,10 @@ class Aaa extends Component {
         ))}
         <button onClick={this.handleClick}>{this.state.count}</button>
         <input type="text" value={this.state.msg} onChange={this.changeMsg} />
+        <div>
+          <input type="text" ref={this.inputRef} />
+          <button onClick={this.hanleRefClick}>按钮</button>
+        </div>
       </div>
     )
   }

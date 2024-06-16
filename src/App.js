@@ -6,6 +6,7 @@ import classNames from 'classnames'
 import PropTypes from 'prop-types'
 import Dou from './hitDD'
 import Hooks from './hooks'
+import UseEffect from './useEffect'
 const name = '我是大美女'
 
 const Hello = (props) => {
@@ -24,9 +25,6 @@ const Hello = (props) => {
       </div>
     </div>
   )
-}
-Hello.propTypes = {
-  name: PropTypes.string,
 }
 class Hello1 extends Component {
   render() {
@@ -108,7 +106,7 @@ class Aaa extends Component {
     const { tabs, active, list } = this.state
     return (
       <div>
-        {tabs.map((item) => (
+        {/* {tabs.map((item) => (
           <div key={item.id} className={item.type === active ? 'active' : ''}>
             按{item.name}排序
           </div>
@@ -138,11 +136,12 @@ class Aaa extends Component {
             name={123}
             subDataGet={this.subDataGet}
           ></Hello>
-        ))}
+        ))} */}
 
         <Hello1>我是66</Hello1>
         <Dou></Dou>
         <Hooks></Hooks>
+        <UseEffect></UseEffect>
       </div>
     )
   }

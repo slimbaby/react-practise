@@ -7,6 +7,8 @@ import PropTypes from 'prop-types'
 import Dou from './hitDD'
 import Hooks from './hooks'
 import UseEffect from './useEffect'
+import Children from './children'
+import UseRef from './useRef'
 const name = '我是大美女'
 
 const Hello = (props) => {
@@ -142,6 +144,8 @@ class Aaa extends Component {
         <Dou></Dou>
         <Hooks></Hooks>
         <UseEffect></UseEffect>
+        <Children children={666}></Children>
+        <UseRef></UseRef>
       </div>
     )
   }

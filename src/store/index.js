@@ -1,6 +1,9 @@
-import { legacy_createStore as createStore } from 'redux'
-import reducer from './reducers/counter'
+import { legacy_createStore as createStore, applyMiddleware } from 'redux'
+import reducer from './reducers'
 // 创建 store
-const store = createStore(reducer)
-
+import logger from 'redux-logger'
+import { thunk } from 'redux-thunk'
+// import thunk
+const middlewares = applyMiddleware(thunk, logger)
+const store = createStore(reducer, middlewares)
 export default store

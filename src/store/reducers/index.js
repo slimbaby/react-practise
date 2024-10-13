@@ -1,9 +1,6 @@
 import { combineReducers } from 'redux'
-import counterReducer from './counter'
-import todoReducer from './todo'
-
+import login from './login'
 const rootReducer = combineReducers({
-  count: counterReducer,
-  todo: todoReducer,
+  login: login,
 })
 export default rootReducer

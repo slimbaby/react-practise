@@ -1,6 +1,5 @@
 // 登录功能
-import { http } from '@/utils/http'
-import { setToken } from '@/utils/token'
+import { http, setToken } from '@/utils'
 export const login = (data) => {
   return async (dispatch) => {
     //异步请求

@@ -10,13 +10,17 @@ const Login = () => {
   const dispatch = useDispatch()
   const history = useNavigate()
   // 表单提交
-  const onFinish = (values) => {
-    //将登录需要的手机号码，验证码传递给login action
-    dispatch(login({ mobile: values.phone, code: values.code }))
-    // 登陆成功后跳转到首页
-    message.success('登录成功', 1.5, () => {
-      history('/home')
-    })
+  const onFinish = async (values) => {
+    try {
+      //将登录需要的手机号码，验证码传递给login action
+      await dispatch(login({ mobile: values.phone, code: values.code }))
+      // 登陆成功后跳转到首页
+      message.success('登录成功', 1.5, () => {
+        history('/home')
+      })
+    } catch (e) {
+      message.warning(e.response?.data?.message || '未知错误')
+    }
   }
   return (
     <div className="login">

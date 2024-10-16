@@ -6,5 +6,7 @@ const setToken = (Token) => localStorage.setItem(TOKEN_KEY, Token)
 // 清除token
 const cleanToken = () => localStorage.removeItem(TOKEN_KEY)
 // 是否已登录，判断token是否有值
-const isAuth = () => !!getToken
+const isAuth = () => {
+  return !!getToken()
+}
 export { getToken, setToken, cleanToken, isAuth }
